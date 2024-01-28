@@ -1,11 +1,19 @@
--- Navigate nvim and tmux windows/panels with vim bindings
 return {
-  -- https://github.com/christoomey/vim-tmux-navigator
-  'christoomey/vim-tmux-navigator',
-  -- Only load this plugin if tmux is being used
-  event = function()
-    if vim.fn.exists("$TMUX") == 1 then
-      return "VeryLazy"
-    end
+  "alexghergh/nvim-tmux-navigation",
+  event = "VeryLazy",
+  config = function()
+    local nvim_tmux_nav = require("nvim-tmux-navigation")
+    nvim_tmux_nav.setup({
+      disable_when_zoomed = true,
+      -- defaults to false
+      keybindings = {
+        left = "<C-h>",
+        down = "<C-j>",
+        up = "<C-k>",
+        right = "<C-l>",
+        last_active = "<C-\\>",
+        next = "<C-Space>",
+      },
+    })
   end,
 }
