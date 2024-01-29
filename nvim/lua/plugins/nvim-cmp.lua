@@ -9,7 +9,7 @@ return {
     "L3MON4D3/LuaSnip",
     -- https://github.com/saadparwaiz1/cmp_luasnip
     "saadparwaiz1/cmp_luasnip",
-
+    "onsails/lspkind.nvim",
     -- LSP completion capabilities
     -- https://github.com/hrsh7th/cmp-nvim-lsp
     "hrsh7th/cmp-nvim-lsp",
@@ -26,6 +26,7 @@ return {
   },
   config = function()
     local cmp = require("cmp")
+    local lspkind = require("lspkind")
     local luasnip = require("luasnip")
     require("luasnip.loaders.from_vscode").lazy_load()
     luasnip.config.setup({})
@@ -73,9 +74,18 @@ return {
       sources = cmp.config.sources({
         { name = "nvim_lsp" }, -- lsp
         { name = "luasnip" }, -- snippets
-        { name = "buffer" }, -- text within current buffer
+        { name = "buffer" }, -- text wit missing required fieldsin type cmp.FormattingConfig: fieldshin current buffer
         { name = "path" }, -- file system paths
       }),
+    -- Enable pictogram icons for lsp/autocompletion
+        formatting = {
+          expandable_indicator = true,
+          format = lspkind.cmp_format({
+            mode = "symbol_text",
+            maxwidth = 50,
+            ellipsis_char = "...",
+          }),
+        },
       window = {
         -- Add borders to completions popups
         completion = cmp.config.window.bordered(),
