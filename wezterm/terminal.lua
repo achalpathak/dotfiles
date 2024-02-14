@@ -46,7 +46,8 @@ M.colors = {
 
 function M.options(config)
 	config.status_update_interval = 1000
-	config.color_scheme = "tokyonight_storm"
+	-- config.color_scheme = "tokyonight_storm"
+  config.color_scheme = "Catppuccin Mocha"
 	config.animation_fps = 240
 	config.max_fps = 240
 
@@ -64,7 +65,9 @@ function M.options(config)
 	config.font_size = 14
 	config.window_decorations = "RESIZE"
 	config.text_background_opacity = 1.0
-	config.window_background_opacity = 1
+  config.window_background_opacity = 1
+	-- config.window_background_opacity = 0.3
+  -- config.macos_window_background_blur = 20
 	config.window_frame = {
 		border_left_width = "0px",
 		border_right_width = "0px",

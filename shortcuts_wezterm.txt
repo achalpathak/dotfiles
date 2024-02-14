@@ -1,0 +1,33 @@
+#leader
+ctrl + a (then release and press other keys) 
+
+
+#new tab
+leader then t
+
+#toggle tab
+alt/opt + tab number
+
+#fuzzy commands
+leader then p
+
+
+
+#paste
+ctrl + shift + v
+
+
+#search
+leader then s (clear old search from box....use enter button to navigate)
+ctrl + p for previous 
+ctrl + n for next
+
+#split panes 
+leader then - or |
+
+#close pane
+leader then x
+
+#close tab
+leader then w
+

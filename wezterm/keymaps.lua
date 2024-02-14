@@ -188,34 +188,34 @@ function M.options(config)
 	--=========================================
 	-- Mouse Bindings
 	--=========================================
-	config.mouse_bindings = {
-		-- Scrolling up while holding CTRL increases the font size
-		{
-			event = { Down = { streak = 1, button = { WheelUp = 1 } } },
-			mods = "CTRL",
-			action = act.IncreaseFontSize,
-		},
-
-		-- Scrolling down while holding CTRL decreases the font size
-		{
-			event = { Down = { streak = 1, button = { WheelDown = 1 } } },
-			mods = "CTRL",
-			action = act.DecreaseFontSize,
-		},
-		{
-			event = { Down = { streak = 1, button = "Right" } },
-			mods = "NONE",
-			action = term.action_callback(function(window, pane)
-				local has_selection = window:get_selection_text_for_pane(pane) ~= ""
-				if has_selection then
-					window:perform_action(act.CopyTo("ClipboardAndPrimarySelection"), pane)
-					window:perform_action(act.ClearSelection, pane)
-				else
-					window:perform_action(act({ PasteFrom = "Clipboard" }), pane)
-				end
-			end),
-		},
-	}
+	-- config.mouse_bindings = {
+	-- 	-- Scrolling up while holding CTRL increases the font size
+	-- 	{
+	-- 		event = { Down = { streak = 1, button = { WheelUp = 1 } } },
+	-- 		mods = "CTRL",
+	-- 		action = act.IncreaseFontSize,
+	-- 	},
+	--
+	-- 	-- Scrolling down while holding CTRL decreases the font size
+	-- 	{
+	-- 		event = { Down = { streak = 1, button = { WheelDown = 1 } } },
+	-- 		mods = "CTRL",
+	-- 		action = act.DecreaseFontSize,
+	-- 	},
+	-- 	{
+	-- 		event = { Down = { streak = 1, button = "Right" } },
+	-- 		mods = "NONE",
+	-- 		action = term.action_callback(function(window, pane)
+	-- 			local has_selection = window:get_selection_text_for_pane(pane) ~= ""
+	-- 			if has_selection then
+	-- 				window:perform_action(act.CopyTo("ClipboardAndPrimarySelection"), pane)
+	-- 				window:perform_action(act.ClearSelection, pane)
+	-- 			else
+	-- 				window:perform_action(act({ PasteFrom = "Clipboard" }), pane)
+	-- 			end
+	-- 		end),
+	-- 	},
+	-- }
 end
 
 return M
