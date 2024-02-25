@@ -1,0 +1,13 @@
+#####go to definition
+space g d
+
+#####go to delcaration
+ctrl + mouse click 
+ctrl ]
+
+
+######codeium
+ctrl + g for accept
+ctrl + ; for next
+ctrl + , for prev
+ctrl + x for close
