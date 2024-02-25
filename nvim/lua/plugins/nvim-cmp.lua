@@ -52,8 +52,12 @@ return {
         }),
         -- Tab through suggestions or when a snippet is active, tab to the next argument
         ["<Tab>"] = cmp.mapping(function(fallback)
+          -- if vim.fn.exists('b:_codeium_completions') ~= 0 then
+          --   -- accept codeium completion if visible
+          --   vim.api.nvim_input(vim.fn['codeium#Accept']())
+          --   fallback()
           if cmp.visible() then
-            cmp.select_next_item()
+              cmp.select_next_item()
           elseif luasnip.expand_or_locally_jumpable() then
             luasnip.expand_or_jump()
           else
@@ -76,7 +80,11 @@ return {
         { name = "luasnip" }, -- snippets
         { name = "buffer" }, -- text wit missing required fieldsin type cmp.FormattingConfig: fieldshin current buffer
         { name = "path" }, -- file system paths
+        { name = "codeium" },
       }),
+     experimental  =  {
+        ghost_text = true,
+      },
     -- Enable pictogram icons for lsp/autocompletion
         formatting = {
           expandable_indicator = true,
