@@ -48,7 +48,7 @@ function M.options(config)
 	--=========================================
 	config.keys = {
 		{ key = "c", mods = "CTRL|SHIFT", action = act({ CopyTo = "ClipboardAndPrimarySelection" }) },
-		{ key = "v", mods = "CTRL", action = act({ PasteFrom = "Clipboard" }) },
+		{ key = "v", mods = "CTRL|SHIFT", action = act({ PasteFrom = "Clipboard" }) },
 		{ key = "r", mods = "LEADER", action = act.ReloadConfiguration },
 
 		--=========================================

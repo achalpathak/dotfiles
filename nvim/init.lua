@@ -4,6 +4,7 @@ require("notify").setup({
   background_colour = "#000000",
 })
 vim.g.codeium_disable_bindings = 1
+vim.g.autoformat = false
 -- vim.cmd('hi Normal guibg=NONE')
 -- vim.cmd('hi NormalNC guibg=NONE')
 -- vim.cmd('hi LineNr guibg=NONE')
