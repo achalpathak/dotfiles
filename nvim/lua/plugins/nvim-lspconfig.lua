@@ -1,76 +1,55 @@
--- LSP Support
 return {
-  -- LSP Configuration
-  -- https://github.com/neovim/nvim-lspconfig
-  "neovim/nvim-lspconfig",
-  event = "VeryLazy",
+  "williamboman/mason.nvim",
   dependencies = {
-    -- LSP Management
-    -- https://github.com/williamboman/mason.nvim
-    { "williamboman/mason.nvim" },
-    -- https://github.com/williamboman/mason-lspconfig.nvim
-    { "williamboman/mason-lspconfig.nvim" },
-
-    -- Useful status updates for LSP
-    -- https://github.com/j-hui/fidget.nvim
-    { "j-hui/fidget.nvim", opts = {} },
-
-    -- Additional lua configuration, makes nvim stuff amazing!
-    -- https://github.com/folke/neodev.nvim
-    { "folke/neodev.nvim" },
+    "williamboman/mason-lspconfig.nvim",
+    "WhoIsSethDaniel/mason-tool-installer.nvim",
   },
   config = function()
-    vim.g.autoformat = false
-    require("mason").setup()
-    require("mason-lspconfig").setup({
-      -- Install these LSPs automatically
-      ensure_installed = {
-        -- 'bashls', -- requires npm to be installed
-        -- 'cssls', -- requires npm to be installed
-        'html', -- requires npm to be installed
-        "lua_ls",
-        -- 'intelephense', -- requires npm to be installed
-        'jsonls', -- requires npm to be installed
-        "lemminx",
-        "pyright",
-        "gopls",
-        "marksman",
-        "quick_lint_js",
-        -- 'tsserver', -- requires npm to be installed
-        -- 'yamlls', -- requires npm to be installed
+    -- import mason
+    local mason = require("mason")
+
+    -- import mason-lspconfig
+    local mason_lspconfig = require("mason-lspconfig")
+
+    local mason_tool_installer = require("mason-tool-installer")
+
+    -- enable mason and configure icons
+    mason.setup({
+      ui = {
+        icons = {
+          package_installed = "✓",
+          package_pending = "➜",
+          package_uninstalled = "✗",
+        },
       },
     })
 
-    local lspconfig = require("lspconfig")
-    local lsp_capabilities = require("cmp_nvim_lsp").default_capabilities()
-    local lsp_attach = function(client, bufnr)
-      -- Create your keybindings here...
-    end
-
-    -- Call setup on each LSP server
-    require("mason-lspconfig").setup_handlers({
-      function(server_name)
-        lspconfig[server_name].setup({
-          on_attach = lsp_attach,
-          capabilities = lsp_capabilities,
-          handlers = {
-            -- Add borders to LSP popups
-            ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" }),
-            ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" }),
-          },
-        })
-      end,
+    mason_lspconfig.setup({
+      -- list of servers for mason to install
+      ensure_installed = {
+        "tsserver",
+        "html",
+        "cssls",
+        "tailwindcss",
+        "svelte",
+        "lua_ls",
+        "emmet_ls",
+        "prismals",
+        "pyright",
+        "gopls",
+      },
+      -- auto-install configured servers (with lspconfig)
+      automatic_installation = true, -- not the same as ensure_installed
     })
 
-    -- Lua LSP settings
-    lspconfig.lua_ls.setup({
-      settings = {
-        Lua = {
-          diagnostics = {
-            -- Get the language server to recognize the `vim` global
-            globals = { "vim" },
-          },
-        },
+    mason_tool_installer.setup({
+      ensure_installed = {
+        "prettier", -- prettier formatter
+        "stylua", -- lua formatter
+        "isort", -- python formatter
+        "black", -- python formatter
+        "pylint", -- python linter
+        "eslint_d", -- js linter
       },
     })
   end,

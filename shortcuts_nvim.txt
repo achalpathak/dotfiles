@@ -16,3 +16,7 @@ ctrl + x for close
 to disable type in cmd :Hardtime disable
 https://m4xshen.dev/posts/vim-command-workflow/
 https://m4xshen.dev/posts/vim-basic-commands
+
+
+###Auto indent
+visual select lines and press =
