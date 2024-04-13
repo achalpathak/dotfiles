@@ -18,5 +18,14 @@ https://m4xshen.dev/posts/vim-command-workflow/
 https://m4xshen.dev/posts/vim-basic-commands
 
 
+<<<<<<< Updated upstream
 ###Auto indent
 visual select lines and press =
+=======
+## replace all foo to bar:
+:%s/foo/bar/g
+
+### change words inside ( bracket
+ci(  for change inside bracket
+cw for change words
+>>>>>>> Stashed changes

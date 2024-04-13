@@ -55,19 +55,19 @@ function M.options(config)
 	config.initial_rows = 50
 	config.font = term.font({
 		-- family = "FiraCode Nerd Font",
-		family = "IosevkaTerm Nerd Font",
-    weight = "Bold",
+    family = "IosevkaTerm Nerd Font",
+    -- weight = "Bold",
 		stretch = "Normal",
 		style = "Normal",
 		harfbuzz_features = { "calt=1", "clig=1", "liga=1" },
-		scale = 1.2,
+		scale = 1,
 	})
-	config.font_size = 14
+	config.font_size = 18
 	config.window_decorations = "RESIZE"
 	config.text_background_opacity = 1.0
-  config.window_background_opacity = 1
+  config.window_background_opacity = 0.99
 	-- config.window_background_opacity = 0.3
-  -- config.macos_window_background_blur = 20
+  config.macos_window_background_blur = 1
 	config.window_frame = {
 		border_left_width = "0px",
 		border_right_width = "0px",
