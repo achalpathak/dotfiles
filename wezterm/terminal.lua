@@ -55,14 +55,15 @@ function M.options(config)
 	config.initial_rows = 50
 	config.font = term.font({
 		-- family = "FiraCode Nerd Font",
-    family = "IosevkaTerm Nerd Font",
-    -- weight = "Bold",
+    -- family = "IosevkaTerm Nerd Font",
+    family = "Victor Mono",
+    weight = "Medium",
 		stretch = "Normal",
 		style = "Normal",
 		harfbuzz_features = { "calt=1", "clig=1", "liga=1" },
-		scale = 1,
+    scale = 1,
 	})
-	config.font_size = 18
+	config.font_size = 17
 	config.window_decorations = "RESIZE"
 	config.text_background_opacity = 1.0
   config.window_background_opacity = 0.99
