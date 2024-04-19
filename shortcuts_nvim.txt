@@ -18,7 +18,6 @@ https://m4xshen.dev/posts/vim-command-workflow/
 https://m4xshen.dev/posts/vim-basic-commands
 
 
-<<<<<<< Updated upstream
 ###Auto indent
 visual select lines and press =
 =======
@@ -28,4 +27,22 @@ visual select lines and press =
 ### change words inside ( bracket
 ci(  for change inside bracket
 cw for change words
->>>>>>> Stashed changes
+
+ciw for change in word
+
+
+yi" copy inside quote
+
+5yy copy 5 lines
+
+% to jump brackets (cursor should be on bracket)
+
+
+
+f => jump to character
+t => jump to character before
+dt( => deletes upto the bracket
+yt( => yank till the opening bracket
+F and T are to find in backwards
+
+zz => center code
