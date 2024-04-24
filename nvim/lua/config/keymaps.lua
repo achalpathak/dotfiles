@@ -18,7 +18,6 @@ vim.keymap.set("n", "<leader>ck", ":diffget 3<CR>") -- get diff from right (remo
 vim.keymap.set("n", "<leader>cn", "]c") -- next diff hunk
 vim.keymap.set("n", "<leader>cp", "[c") -- previous diff hunk
 
-
 -- Move selected line/block of text up and down in visual mode
 map("v", "J", ":m '>+1<CR>gv=gv", opts)
 map("v", "K", ":m '<-2<CR>gv=gv", opts)
@@ -34,3 +33,13 @@ map("n", "<C-a>", "ggVG", opts)
 -- cnoremap <C-j> <Down>
 -- cnoremap <C-k> <Up>
 -- cnoremap <C-l> <Right>
+
+-- Makes code format (also works in Visual mode)
+map({ "n", "v" }, "<leader>mp", function()
+  local conform = require("conform")
+  conform.format({
+    lsp_fallback = true,
+    async = false,
+    timeout_ms = 500,
+  })
+end, { desc = "Format file or range (in visual mode)" })
