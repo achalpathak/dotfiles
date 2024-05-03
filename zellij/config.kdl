@@ -48,8 +48,8 @@ keybinds {
     bind "Alt g" { SwitchToMode "locked"; }
     bind "Alt q" { Quit; }
     bind "Alt t" { NewTab; }
-    bind "Alt d" { NewPane "down";}
-    bind "Alt r" { NewPane "right"; }
+    bind "Alt -" { NewPane "down";}
+    bind "Alt |" { NewPane "right"; }
     bind "Alt f" { ToggleFloatingPanes; }
     bind "Alt 1" { GoToTab 1; }
     bind "Alt 2" { GoToTab 2; }
