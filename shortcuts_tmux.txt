@@ -15,8 +15,6 @@ shift arrowkeys
 #kill whole window
 leader & then press y
 
-#panes
-leader h/v
 
 #move between panes
 alt + arrow
@@ -40,7 +38,7 @@ leader w
 to kill press x on highlighted
 
 #reload conf
-leader r
+leader R
 
 #install plugin
 leader I
@@ -62,4 +60,12 @@ leader $ then input name
 leader d #detach from session(runs in background)
 tmux attach #attaches to the latest session
 tmux attach -t crm_work
+
+
+
+#tmux vim mode
+leader [
+select with v and vim motions
+mouse scroll will also work
+to exit ctrl + c
 
