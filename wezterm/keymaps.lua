@@ -120,8 +120,10 @@ function M.options(config)
 		{ key = "k", mods = "LEADER", action = act({ ActivatePaneDirection = "Up" }) },
 		{ key = "l", mods = "LEADER", action = act({ ActivatePaneDirection = "Right" }) },
     -- opt + arrow key to jump words
-    {key="LeftArrow", mods="OPT", action=term.action{SendString="\x1bb"}},
-    {key="RightArrow", mods="OPT", action=term.action{SendString="\x1bf"}},
+    {key="LeftArrow", mods="CTRL", action=term.action{SendString="\x1bb"}},
+    {key="RightArrow", mods="CTRL", action=term.action{SendString="\x1bf"}},
+    -- {key="LeftArrow", mods="OPT", action=term.action{SendString="\x1bb"}},
+    -- {key="RightArrow", mods="OPT", action=term.action{SendString="\x1bf"}},
 		--=========================================
 	}
 	--=========================================
