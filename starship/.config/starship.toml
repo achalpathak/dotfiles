@@ -64,5 +64,5 @@ symbol = " "
 
 [rust]
 disabled = false
-symbol = "🦀 "
-style = "fg:#FF2525"
+symbol = "󱘗 "
+style = "fg:#d63c3c"

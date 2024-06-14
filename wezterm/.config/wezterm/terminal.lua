@@ -43,30 +43,33 @@ M.colors = {
 	tab_inactive = "#1f2335",
 	tab_fg = "#a9b1d6",
 }
-
 function M.options(config)
 	config.status_update_interval = 1000
 	-- config.color_scheme = "tokyonight_storm"
   config.color_scheme = "Catppuccin Mocha"
 	config.animation_fps = 240
 	config.max_fps = 240
-
+  config.enable_wayland = false
 	config.initial_cols = 100
 	config.initial_rows = 50
 	config.font = term.font({
 		-- family = "FiraCode Nerd Font",
     -- family = "IosevkaTerm Nerd Font",
-    family = "Victor Mono",
-    weight = "Medium",
+    -- family = "Victor Mono",
+    -- family = "ComicShannsMono Nerd Font",
+    -- family = "Monaspace Radon",
+    family = "Agave",
+    -- family = "Lotion Black",
+    weight = "Regular",
 		stretch = "Normal",
 		style = "Normal",
 		harfbuzz_features = { "calt=1", "clig=1", "liga=1" },
     scale = 1,
 	})
-	config.font_size = 17
+	config.font_size = 19
 	config.window_decorations = "RESIZE"
 	config.text_background_opacity = 1.0
-  config.window_background_opacity = 0.99
+  config.window_background_opacity = 1
 	-- config.window_background_opacity = 0.3
   config.macos_window_background_blur = 1
 	config.window_frame = {
@@ -86,8 +89,8 @@ function M.options(config)
 	config.inactive_pane_hsb = { saturation = 1.0, brightness = 1.0 }
 	config.window_padding = { left = "1px", right = "1px", top = "0.1cell", bottom = "0.1cell" }
 	config.colors = {
-		background = M.colors.crust,
-		-- background = M.colors.transparent,
+		-- background = M.colors.crust,
+		background = M.colors.transparent,
 		tab_bar = {
 			background = M.colors.transparent,
 			active_tab = {
