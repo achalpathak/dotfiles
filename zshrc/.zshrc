@@ -1,13 +1,4 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
-# Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-# Which plugins would you like to load?
-# Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
 plugins=(
     git
     history-substring-search
@@ -16,42 +7,55 @@ plugins=(
     zsh-syntax-highlighting
     zsh-z
 )
-source $ZSH/oh-my-zsh.sh
 eval "$(starship init zsh)"
-alias "cat"="bat --style=plain"
-alias "servers"="~/MainDrive/ssh.sh"
-alias wreboot="sudo grub-reboot 3 && reboot"
+# alias wreboot="sudo grub-reboot 3 && reboot"
 
-# Blur {{{
-# if [[ $(ps --no-header -p $PPID -o comm) =~ '^yakuake|kitty$' ]]; then
-#         for wid in $(xdotool search --pid $PPID); do
-#             xprop -f _KDE_NET_WM_BLUR_BEHIND_REGION 32c -set _KDE_NET_WM_BLUR_BEHIND_REGION 0 -id $wid; done
-# fi
-# }}}
+
+HISTFILE=$HOME/.zhistory
+SAVEHIST=10000
+HISTSIZE=9999
+setopt share_history
+setopt hist_expire_dups_first
+setopt hist_ignore_dups
+setopt hist_verify
 
 export HISTSIZE=1000000000
 export HISTFILESIZE=1000000000
 export HISTTIMEFORMAT=" "
 export HISTCONTROL=ignoreboth:erasedups
 
+# Upgrade
+alias y="yay"
+
+# Search
+alias ys="yay -Ss"
+
+# Install
+alias yi="yay -S"
+
+# Remove
+alias yr="yay -R"
+
 # alias "install"="sudo pacman -S"
 alias "install"="yay -S"
 alias "uninstall"="sudo pacman -Runs"
 alias "tmux"="tmux -u"
 alias "vim"="nvim"
-alias ls="eza -l --color=always --group-directories-first"
-alias ll="eza -al --color=always --group-directories-first"
+alias ls="eza --icons=always -l --color=always --group-directories-first"
+alias ll="eza --icons=always -al --color=always --group-directories-first"
 alias sl=ls
 alias htop="btop --utf-force"
 # alias rm=trash
 alias pbcopy="xsel --input --clipboard"
 alias pbpaste="xsel --output --clipboard"
 alias logouthypr="hyprctl dispatch exit"
+alias tn="tmux new -s"
+alias tl="tmux list-sessions"
+alias ta="tmux attach -t"
 cheat() {curl cht.sh/$1/$2}
 eval "$(zoxide init --cmd cd zsh)"
-# colorscript random
-cermic 1 /Users/achal.pathak/tmp/cermic-tiny-art-repo/images
-# alias source-zshrc="source ~/.zshrc"
+
+cermic 1 ~/.config/cermicbg
 
 # if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
 #   # exec tmux new-session -A -s main
@@ -59,5 +63,4 @@ cermic 1 /Users/achal.pathak/tmp/cermic-tiny-art-repo/images
 #   exec tmux
 # fi
 
-
-. ~/.dx-zsh-completion.sh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
