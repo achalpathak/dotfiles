@@ -23,7 +23,6 @@ export HISTSIZE=1000000000
 export HISTFILESIZE=1000000000
 export HISTTIMEFORMAT=" "
 export HISTCONTROL=ignoreboth:erasedups
-
 # Upgrade
 alias y="yay"
 
@@ -56,11 +55,5 @@ cheat() {curl cht.sh/$1/$2}
 eval "$(zoxide init --cmd cd zsh)"
 
 cermic 1 ~/.config/cermicbg
-
-# if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-#   # exec tmux new-session -A -s main
-#   # tmux attach || exec tmux new-session && exit;
-#   exec tmux
-# fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
