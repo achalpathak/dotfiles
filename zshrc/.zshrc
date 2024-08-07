@@ -7,6 +7,7 @@ plugins=(
     zsh-syntax-highlighting
     zsh-z
 )
+source $ZSH/oh-my-zsh.sh
 eval "$(starship init zsh)"
 # alias wreboot="sudo grub-reboot 3 && reboot"
 
@@ -55,5 +56,4 @@ cheat() {curl cht.sh/$1/$2}
 eval "$(zoxide init --cmd cd zsh)"
 
 cermic 1 ~/.config/cermicbg
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
