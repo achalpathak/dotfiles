@@ -41,6 +41,7 @@ alias "install"="yay -S"
 alias "uninstall"="sudo pacman -Runs"
 alias "tmux"="tmux -u"
 alias "vim"="nvim"
+alias "tt"="tt -t 30"
 alias ls="eza --icons=always -l --color=always --group-directories-first"
 alias ll="eza --icons=always -al --color=always --group-directories-first"
 alias sl=ls
