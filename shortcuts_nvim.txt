@@ -12,24 +12,23 @@ ctrl + ; for next
 ctrl + , for prev
 ctrl + x for close
 
-## hard mode
-to disable type in cmd :Hardtime disable
-https://m4xshen.dev/posts/vim-command-workflow/
-https://m4xshen.dev/posts/vim-basic-commands
 
 
 ###Auto indent
 visual select lines and press =
 =======
+
 ## replace all foo to bar:
 :%s/foo/bar/g
 
-### change words inside ( bracket
-ci(  for change inside bracket
-cw for change words
+## replace all foo to bar with confirmation:
+:%s/foo/bar/gc
 
-ciw for change in word
+## replace all foo to bar on selected lines:
+:s/foo/bar/g
 
+## replace all / to ++ sign:(we can use other delmieter as well in palce of /)
+:%s#/#+#g
 
 yi" copy inside quote
 
