@@ -1,7 +1,7 @@
 local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
-config.font = wezterm.font("Dank Mono", {weight="Regular", italic=true})
+config.font = wezterm.font("Dank Mono", {weight="Regular", italic=false})
 config.font_size = 19
 config.window_decorations = "RESIZE"
 config.enable_wayland = false

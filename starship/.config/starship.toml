@@ -19,8 +19,8 @@ disabled = true
 #-- Git --------------------------------------------------------------------------------
 [git_branch]
 symbol = ' '
-truncation_length = 10
-truncation_symbol = ''
+# truncation_length = 10
+# truncation_symbol = ''
 style = "fg:#20ff20"
 
 [git_status]
