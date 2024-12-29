@@ -118,15 +118,15 @@ when = 'git rev-parse --is-inside-work-tree 2> /dev/null'
 format = "$output"
 
 [git_branch]
-symbol = "[](black) "
+symbol = "[](black)  "
 style = "fg:lavender bg:black"
-format =  '  [$symbol$branch]($style)[](black)'
+format =  '  [$symbol$branch]($style)[](black)'
 
 
 [git_status]
 disabled = false
 style = "fg:lavender bg:black"
-format =  '[](black)[$all_status]($style)[](black)'
+format =  '[](black)[$all_status ]($style)[](black)'
 stashed = "  ${count} "
 ahead = " 󰞙 ${count} "
 behind = " 󰞒 ${count} "
