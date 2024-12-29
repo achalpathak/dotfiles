@@ -46,4 +46,4 @@ opt.scrolloff = 8
 opt.isfname:append("@-@")
 opt.updatetime = 50
 
-opt.colorcolumn = "80"
+-- opt.colorcolumn = "80"
