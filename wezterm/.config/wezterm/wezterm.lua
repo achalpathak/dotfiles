@@ -5,7 +5,7 @@ local mux = wezterm.mux
 
 -- config.font = wezterm.font("Dank Mono", { weight = "Regular", italic = false })
 config.font = wezterm.font("Agave Nerd Font", { weight = "Regular", italic = false })
-config.font_size = 17
+config.font_size = 18
 config.window_decorations = "RESIZE"
 config.enable_wayland = false
 config.max_fps = 120
