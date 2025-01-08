@@ -1,0 +1,237 @@
+* {
+  border: none;
+  border-radius: 10;
+  font-family: "JetbrainsMono Nerd Font";
+  font-size: 15px;
+  font-weight: 700;
+  min-height: 10px;
+}
+window#waybar {
+  background: transparent;
+}
+#network {
+  margin-top: 10px;
+  margin-left: 8px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 0px;
+  border-radius: 10px;
+  transition: none;
+  background: #0a121c;
+  color: #b7b6be;
+  transition: 0.3s;
+}
+#network:hover {
+  color: #0a121c;
+  background: #b7b6be;
+}
+#language {
+  margin-top: 10px;
+  margin-left: 8px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 0px;
+  border-radius: 10px;
+  transition: none;
+  background: #0a121c;
+  color: #b7b6be;
+  transition: 0.3s;
+}
+#language:hover {
+  color: #0a121c;
+  background: #b7b6be;
+}
+#pulseaudio {
+  margin-top: 10px;
+  margin-left: 8px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 0px;
+  border-radius: 10px;
+  transition: none;
+  background: #0a121c;
+  color: #b7b6be;
+  padding: 8px;
+  transition: 0.3s;
+}
+#pulseaudio:hover {
+  background: #b7b6be;
+  color: #0a121c;
+}
+#pulseaudio.muted {
+  color: #f38ba8;
+  background: #0a121c;
+  transition: 0.3s;
+}
+#pulseaudio.muted:hover {
+  background: #f38ba8;
+  color: #0a121c;
+}
+#clock {
+  margin-top: 10px;
+  margin-left: 8px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 0px;
+  border-radius: 10px;
+  transition: none;
+  background: #0a121c;
+  color: #b7b6be;
+  transition: 0.3s;
+}
+#clock:hover {
+  color: #0a121c;
+  background: #b7b6be;
+}
+#disk {
+  margin-top: 10px;
+  margin-left: 8px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 0px;
+  border-radius: 10px;
+  transition: none;
+  background: #0a121c;
+  color: #b7b6be;
+  transition: 0.3s;
+}
+#disk:hover {
+  color: #0a121c;
+  background: #b7b6be;
+}
+#idle_inhibitor {
+  margin-top: 10px;
+  margin-left: 8px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 0px;
+  border-radius: 10px;
+  transition: none;
+  background: #0a121c;
+  color: #b7b6be;
+  transition: 0.3s;
+}
+#idle_inhibitor.activated {
+  color: #89b4fa;
+  border-color: #89b4fa;
+}
+#idle_inhibitor.activated:hover {
+  background: #89b4fa;
+  color: #0a121c;
+  border-color: #89b4fa;
+}
+#idle_inhibitor.deactivated {
+  color: #b7b6be;
+}
+#idle_inhibitor.deactivated:hover {
+  color: #0a121c;
+  background: #b7b6be;
+}
+#memory {
+  margin-top: 10px;
+  margin-left: 8px;
+  padding-left: 10px;
+  margin-bottom: 0px;
+  padding-right: 10px;
+  border-radius: 10px;
+  transition: none;
+  background: #0a121c;
+  color: #b7b6be;
+  transition: 0.3s;
+}
+#memory:hover {
+  color: #0a121c;
+  background: #b7b6be;
+}
+#cpu {
+  margin-top: 10px;
+  margin-left: 8px;
+  padding-left: 10px;
+  margin-bottom: 0px;
+  padding-right: 10px;
+  border-radius: 10px;
+  transition: none;
+  background: #0a121c;
+  color: #b7b6be;
+  transition: 0.3s;
+}
+#cpu:hover {
+  color: #0a121c;
+  background: #b7b6be;
+}
+#custom-launcher {
+  font-size: 20px;
+  margin-top: 10px;
+  margin-left: 17px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 10px;
+  transition: none;
+  color: #b7b6be;
+  background: #0a121c;
+  transition: 0.3s;
+}
+#custom-launcher:hover {
+  background: #b7b6be;
+  color: #0a121c;
+}
+#network.disconnected {
+  color: #f38ba8;
+  background: #0a121c;
+}
+#network.disconnected:hover {
+  background: #f38ba8;
+  color: #0a121c;
+}
+#custom-power {
+  font-size: 15px;
+  margin-top: 10px;
+  margin-left: 8px;
+  margin-right: 17px;
+  padding-left: 10px;
+  padding-right: 5px;
+  margin-bottom: 0px;
+  border-radius: 10px;
+  transition: none;
+  background: #0a121c;
+  color: #b7b6be;
+  transition: 0.3s;
+}
+#custom-power:hover {
+  background: #f38ba8;
+  color: #0a121c;
+  border-color: #f38ba8;
+}
+#custom-temperature {
+  font-size: 15px;
+  margin-top: 10px;
+  margin-left: 8px;
+  margin-right: 17px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 0px;
+  border-radius: 10px;
+  transition: none;
+  background: #0a121c;
+  color: #b7b6be;
+  transition: 0.3s;
+}
+#workspaces {
+  margin-top: 10px;
+  margin-left: 8px;
+  background: #0a121c;
+  color: #b7b6be;
+  transition: 0.3s;
+}
+#workspaces button {
+  color: #b7b6be;
+  transition: 0.3s;
+}
+#workspaces button:hover {
+  background: transparent;
+  color: transparent;
+}
+#workspaces button.active {
+  background-color: #b7b6be;
+  color: #0a121c;
+}
