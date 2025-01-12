@@ -5,7 +5,7 @@ command_timeout = 1000
 add_newline = true 
 
 format = """
-$os \
+╭─$os \
 $directory\
 ${custom.giturl}\
 $git_branch\
@@ -19,7 +19,7 @@ $python\
 $rust\
 $php\
 $c
-[➜ ](yellow)
+╰─>
 """
 
 

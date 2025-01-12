@@ -8,7 +8,7 @@ config.font = wezterm.font("Agave Nerd Font", { weight = "Regular", italic = fal
 config.font_size = 18
 config.window_decorations = "RESIZE"
 config.enable_wayland = false
-config.max_fps = 120
+config.max_fps = 240
 config.prefer_egl = true
 config.adjust_window_size_when_changing_font_size = false
 
