@@ -4,19 +4,23 @@
     "output": "DP-1",
 	"modules-left": ["custom/launcher","hyprland/workspaces"],
 	"modules-center": ["clock"],
-	"modules-right": ["cpu", "memory", "network","pulseaudio","custom/power"],
+	"modules-right": ["cpu", "memory", "network", "pulseaudio","custom/power"],
 	
-	"pulseaudio": {
-		"tooltip": false,
-		"scroll-step": 5,
-		"format": "{icon}   {volume}%",
-		"format-muted": "muted",
-		"on-click-right":"pactl set-sink-mute @DEFAULT_SINK@ toggle",
-		"on-click":"pavucontrol",
-		"format-icons": {
-			"default": ["", "", ""]
-		}
-	},
+"pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "Muted",
+    "format-icons": {
+        "headphones": "🎧",
+        "speakers": "🔊",
+        "default": ["🔈"],
+        "alsa_output.usb-Realtek_Inferno_Wireless_Headset-00.analog-stereo": "🎧",
+        "alsa_output.pci-0000_06_00.6.analog-stereo": "🔊"
+    },
+    "on-click": "bash -c 'CURRENT_SINK=$(pactl get-default-sink); if [ \"$CURRENT_SINK\" == \"alsa_output.usb-Realtek_Inferno_Wireless_Headset-00.analog-stereo\" ]; then pactl set-default-sink alsa_output.pci-0000_06_00.6.analog-stereo; else pactl set-default-sink alsa_output.usb-Realtek_Inferno_Wireless_Headset-00.analog-stereo; fi'",
+    "on-click-right": "pavucontrol",
+    "exec": "bash -c 'CURRENT_SINK=$(pactl get-default-sink); if [ \"$CURRENT_SINK\" == \"alsa_output.usb-Realtek_Inferno_Wireless_Headset-00.analog-stereo\" ]; then echo \"🎧\"; else echo \"🔊\"; fi'",
+},
+
 
     "disk": {
         "interval": 30,
@@ -71,7 +75,7 @@
     "custom/power":{
         "format": "⏻ ",
         "tooltip": false,
-        "on-click": "rofi -show power-menu -modi power-menu:rofi-power-menu"
+        "on-click": "~/.config/hypr/waybar/scripts/power_menu.sh"
         
     },
     "clock": {
