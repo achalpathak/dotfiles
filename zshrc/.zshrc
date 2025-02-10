@@ -58,3 +58,7 @@ eval "$(zoxide init --cmd cd zsh)"
 
 cermic 1 ~/.config/cermicbg
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Enables reverse search with fzf on mac
+source /opt/homebrew/Cellar/fzf/0.53.0/shell/key-bindings.zsh 2>/dev/null
+source /opt/homebrew/Cellar/fzf/0.53.0/shell/completion.zsh 2>/dev/null

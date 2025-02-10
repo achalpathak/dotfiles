@@ -7,7 +7,7 @@ return {
 		provider = "copilot",
 		copilot = {
 			endpoint = "https://api.githubcopilot.com",
-			model = "gpt-4o-2024-08-06",
+			model = "claude-3.5-sonnet",
 		},
 	},
 	-- if you want to build from source then do `make BUILD_FROM_SOURCE=true`

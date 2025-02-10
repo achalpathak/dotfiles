@@ -9,7 +9,7 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls", "ts_ls", "gopls", "ruff" },
+				ensure_installed = { "lua_ls", "cssmodules_ls", "cssls", "ts_ls", "gopls", "ruff" },
 			})
 		end,
 	},
@@ -29,9 +29,15 @@ return {
 		},
 		config = function()
 			local lspconfig = require("lspconfig")
+
+			local capabilities = vim.lsp.protocol.make_client_capabilities()
+			capabilities.textDocument.completion.completionItem.snippetSupport = true
+
 			lspconfig.lua_ls.setup({})
 			lspconfig.ts_ls.setup({})
 			lspconfig.gopls.setup({})
+			lspconfig.cssls.setup({ capabilities = capabilities })
+			lspconfig.cssmodules_ls.setup({})
 			lspconfig.rust_analyzer.setup({})
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Hover Documentation" })
@@ -44,6 +50,7 @@ return {
 			)
 
 			vim.keymap.set("n", "gs", vim.lsp.buf.signature_help, { desc = "Signature Documentation" })
+			vim.keymap.set("n", "gR", vim.lsp.buf.rename, { desc = "LSP Rename across project" })
 			vim.keymap.set("n", "ga", vim.lsp.buf.code_action, { desc = "Code Actions" })
 			-- vim.keymap.set("n", "gl", vim.diagnostic.open_float, { desc = "Open Diagnostic Float" })
 
