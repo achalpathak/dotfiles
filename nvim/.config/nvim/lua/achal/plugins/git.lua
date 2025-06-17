@@ -14,7 +14,8 @@ return {
 			enabled = true,
 			message_template = " <summary> • <date> • <author>",
 			date_format = "%d-%b-%Y %I:%M %p",
-			virtual_text_column = 1,
+			virtual_text_column = 2,
+			message_when_not_committed = "",
 		},
 	},
 }

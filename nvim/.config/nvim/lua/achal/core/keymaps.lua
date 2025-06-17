@@ -22,3 +22,14 @@ keymap.set("n", "<S-H>", "<cmd>bp<CR>", { desc = "Go to previours buffer" })
 -- move highlighted lines up and down
 keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
+-- clipboard management
+keymap.set("x", "<leader>p", [["dP"]], { desc = "Paste without replacing register" })
+keymap.set("v", "p", '"_dp', { noremap = true, silent = true, desc = "Paste without replacing register" })
+keymap.set({ "n", "v" }, "<leader>d", [["_d]])
+keymap.set(
+	{ "n", "x" },
+	"x",
+	'"_x',
+	{ noremap = true, silent = true, desc = "Delete characters without replacing register" }
+)

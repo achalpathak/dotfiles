@@ -7,10 +7,57 @@ return {
 	},
 	{
 		"williamboman/mason-lspconfig.nvim",
+		dependencies = {
+			"williamboman/mason.nvim",
+			"neovim/nvim-lspconfig",
+		},
 		config = function()
-			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls", "cssmodules_ls", "cssls", "ts_ls", "gopls", "ruff" },
+			local lspconfig = require("lspconfig")
+			local mason_lspconfig = require("mason-lspconfig")
+
+			-- Enable the following language servers
+			local servers = { "lua_ls", "cssmodules_ls", "cssls", "ts_ls", "gopls", "ruff" }
+			mason_lspconfig.setup({
+				ensure_installed = servers,
+				automatic_installation = true,
 			})
+
+			local capabilities = vim.lsp.protocol.make_client_capabilities()
+			capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+			mason_lspconfig.setup({
+				ensure_installed = servers,
+				automatic_installation = true,
+				handlers = {
+					function(server_name)
+						lspconfig[server_name].setup({
+							capabilities = capabilities,
+						})
+					end,
+				},
+			})
+		end,
+	},
+	{
+		"rachartier/tiny-inline-diagnostic.nvim",
+		event = "VeryLazy", -- Or `LspAttach`
+		priority = 1000, -- needs to be loaded in first
+		config = function()
+			require("tiny-inline-diagnostic").setup({
+				signs = {
+					left = "",
+					right = "",
+					diag = "●",
+					arrow = "    ",
+					up_arrow = "    ",
+					vertical = " │",
+					vertical_end = " └",
+				},
+				blend = {
+					factor = 0.22,
+				},
+			})
+			vim.diagnostic.config({ virtual_text = false }) -- Only if needed in your configuration, if you already have native LSP diagnostics
 		end,
 	},
 	{
@@ -32,13 +79,6 @@ return {
 
 			local capabilities = vim.lsp.protocol.make_client_capabilities()
 			capabilities.textDocument.completion.completionItem.snippetSupport = true
-
-			lspconfig.lua_ls.setup({})
-			lspconfig.ts_ls.setup({})
-			lspconfig.gopls.setup({})
-			lspconfig.cssls.setup({ capabilities = capabilities })
-			lspconfig.cssmodules_ls.setup({})
-			lspconfig.rust_analyzer.setup({})
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Hover Documentation" })
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Jump to Definition" })

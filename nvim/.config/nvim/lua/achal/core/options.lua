@@ -46,4 +46,6 @@ opt.scrolloff = 8
 opt.isfname:append("@-@")
 opt.updatetime = 50
 
+vim.g.editorconfig = true
+
 -- opt.colorcolumn = "80"
