@@ -1,3 +1,9 @@
+local function enable_transparency()
+	vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+	vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+	vim.api.nvim_set_hl(0, "LineNr", { bg = "none" })
+end
+
 return {
 	{
 		"rose-pine/neovim",
@@ -9,7 +15,8 @@ return {
 		"rebelot/kanagawa.nvim",
 		config = function()
 			require("kanagawa").setup({ transparent = true })
-			-- vim.cmd.colorscheme("kanagawa")
+			vim.cmd.colorscheme("kanagawa-wave")
+			enable_transparency()
 		end,
 	},
 	{
@@ -57,7 +64,17 @@ return {
 					-- type = "#dcaed7",
 				},
 			})
-			vim.cmd.colorscheme("vague")
+			-- vim.cmd.colorscheme("vague")
+		end,
+	},
+	{
+		"Mofiqul/vscode.nvim",
+		name = "vscode",
+		config = function()
+			-- vim.cmd.colorscheme("vscode")
+			vim.cmd("hi Directory guibg=NONE")
+			vim.cmd("hi SignColumn guibg=NONE")
+			enable_transparency()
 		end,
 	},
 }

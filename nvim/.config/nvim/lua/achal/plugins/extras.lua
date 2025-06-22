@@ -31,20 +31,6 @@ return {
 			},
 		},
 	},
-	-- snipe
-	{
-		"leath-dub/snipe.nvim",
-		keys = {
-			{
-				"<leader>bb",
-				function()
-					require("snipe").open_buffer_menu()
-				end,
-				desc = "Open Snipe buffer menu",
-			},
-		},
-		opts = {},
-	},
 	{
 		"echasnovski/mini.surround",
 		opts = {
@@ -99,6 +85,18 @@ return {
 					return buffer
 				end,
 			})
+		end,
+	},
+	{
+		"sphamba/smear-cursor.nvim",
+		opts = {
+			legacy_computing_symbols_support = false,
+		},
+	},
+	{
+		"mbbill/undotree",
+		config = function()
+			vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle, { desc = "Show Undo Tree" })
 		end,
 	},
 }

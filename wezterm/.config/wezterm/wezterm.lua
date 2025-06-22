@@ -4,8 +4,8 @@ local action = wezterm.action
 local mux = wezterm.mux
 
 -- config.font = wezterm.font("Dank Mono", { weight = "Regular", italic = false })
--- config.font = wezterm.font("Agave Nerd Font", { weight = "Regular", italic = false })
-config.font = wezterm.font("SeriousShanns Nerd Font", { weight = "Regular", italic = false })
+config.font = wezterm.font("Agave Nerd Font", { weight = "Regular", italic = false })
+-- config.font = wezterm.font("SeriousShanns Nerd Font", { weight = "Regular", italic = false })
 config.font_size = 16
 config.window_decorations = "RESIZE"
 config.enable_wayland = false
@@ -30,9 +30,10 @@ config.window_padding = {
 
 -- Background Config
 config.color_scheme = "Catppuccin Mocha"
-config.window_background_opacity = 1
+-- config.window_background_opacity = 1
+config.window_background_opacity = 0.3
 -- config.window_background_image = "bg-blurred.png"
-config.window_background_image = wezterm.config_dir .. "/bg-blurred-darker.png"
+-- config.window_background_image = wezterm.config_dir .. "/bg-blurred-darker.png"
 config.macos_window_background_blur = 40
 
 -- Maximize wezterm on startup

@@ -56,6 +56,15 @@ alias ta="tmux attach -t"
 cheat() {curl cht.sh/$1/$2}
 eval "$(zoxide init --cmd cd zsh)"
 
+
+# git aliases
+alias ga='git add'
+alias gs='git status'
+alias gco='git checkout'
+alias gcm='git commit -m'
+alias gpush='git push origin $(git branch --show-current)' #push to current branch
+alias gpull='git pull origin $(git branch --show-current)'
+
 cermic 1 ~/.config/cermicbg
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
