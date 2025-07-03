@@ -12,11 +12,34 @@ return {
 		end,
 	},
 	{
+		-- Monochrome theme
 		"RRethy/base16-nvim",
 		config = function()
 			-- To use this theme, set wezterm config.colors{background="black"} and config.window_background_opacity=1
 			vim.cmd.colorscheme("base16-black-metal-gorgoroth")
 			enable_transparency()
+		end,
+	},
+	{
+		-- Monochorome theme
+		"slugbyte/lackluster.nvim",
+		lazy = false,
+		priority = 1000,
+		init = function()
+			local lackluster = require("lackluster")
+			require("nvim-web-devicons").setup({
+				color_icons = false,
+				override = {
+					["default_icon"] = {
+						color = lackluster.color.gray4,
+						name = "Default",
+					},
+				},
+			})
+
+			-- vim.cmd.colorscheme("lackluster")
+			-- vim.cmd.colorscheme("lackluster-hack") -- my favorite
+			-- vim.cmd.colorscheme("lackluster-mint")
 		end,
 	},
 	{
