@@ -12,10 +12,18 @@ return {
 		end,
 	},
 	{
+		"RRethy/base16-nvim",
+		config = function()
+			-- To use this theme, set wezterm config.colors{background="black"} and config.window_background_opacity=1
+			vim.cmd.colorscheme("base16-black-metal-gorgoroth")
+			enable_transparency()
+		end,
+	},
+	{
 		"rebelot/kanagawa.nvim",
 		config = function()
 			require("kanagawa").setup({ transparent = true })
-			vim.cmd.colorscheme("kanagawa-wave")
+			-- vim.cmd.colorscheme("kanagawa-wave")
 			enable_transparency()
 		end,
 	},
@@ -65,16 +73,6 @@ return {
 				},
 			})
 			-- vim.cmd.colorscheme("vague")
-		end,
-	},
-	{
-		"Mofiqul/vscode.nvim",
-		name = "vscode",
-		config = function()
-			-- vim.cmd.colorscheme("vscode")
-			vim.cmd("hi Directory guibg=NONE")
-			vim.cmd("hi SignColumn guibg=NONE")
-			enable_transparency()
 		end,
 	},
 }
