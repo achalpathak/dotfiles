@@ -4,11 +4,21 @@ local keymap = vim.keymap
 
 keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
 
+-- Center screen when jumping
+keymap.set("n", "n", "nzzzv", { desc = "Next search result (centered)" })
+keymap.set("n", "N", "Nzzzv", { desc = "Previous search result (centered)" })
+keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Half page down (centered)" })
+keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Half page up (centered)" })
+
 -- window management
 keymap.set("n", "<leader>wv", "<C-w>v", { desc = "Split window vertically" })
 keymap.set("n", "<leader>wh", "<C-w>s", { desc = "Split window horizontally" })
 keymap.set("n", "<leader>we", "<C-w>=", { desc = "Make splits equal size" })
 keymap.set("n", "<leader>wc", "<cmd>close<CR>", { desc = "Close current split" })
+keymap.set("n", "<C-Up>", ":resize +2<CR>", { desc = "Increase window height" })
+keymap.set("n", "<C-Down>", ":resize -2<CR>", { desc = "Decrease window height" })
+keymap.set("n", "<C-Left>", ":vertical resize -2<CR>", { desc = "Decrease window width" })
+keymap.set("n", "<C-Right>", ":vertical resize +2<CR>", { desc = "Increase window width" })
 
 -- tab management
 keymap.set("n", "<leader>to", "<cmd>tabnew<CR>", { desc = "Open new tab" })

@@ -1,4 +1,5 @@
 export ZSH="$HOME/.oh-my-zsh"
+export PATH="/usr/bin/wezterm:$PATH"
 plugins=(
     git
     history-substring-search
@@ -37,23 +38,34 @@ alias yi="yay -S"
 alias yr="yay -R"
 
 # alias "install"="sudo pacman -S"
+alias "upgrade"='yay -Syu'
+alias "update"= 'yay -S'
 alias "install"="yay -S"
-alias "uninstall"="sudo pacman -Runs"
+alias "uninstall"="yay -Rdd"
+# alias "uninstall"="sudo pacman -Rd --nodeps"
 alias "tmux"="tmux -u"
 alias "vim"="nvim"
 alias "tt"="tt -t 30"
 alias ls="eza --icons=always -l --color=always --group-directories-first"
 alias ll="eza --icons=always -al --color=always --group-directories-first"
 alias sl=ls
-alias htop="btop --utf-force"
+alias htop="btop"
 # alias rm=trash
-alias pbcopy="xsel --input --clipboard"
-alias pbpaste="xsel --output --clipboard"
 alias logouthypr="hyprctl dispatch exit"
-alias tn="tmux new -s"
-alias tl="tmux list-sessions"
-alias ta="tmux attach -t"
-cheat() {curl cht.sh/$1/$2}
+# alias tn="tmux new -s"
+# alias tl="tmux list-sessions"
+# alias ta="tmux attach -t"
+
+tn() { wezterm cli activate-workspace "$1"; }
+# ta() { wezterm cli activate-workspace "$1"; }
+# alias tl='wezterm cli list-clients'
+tl() {
+  local ws
+  ws=$(wezterm cli list --format json | jq -r '.[].workspace' | sort -u | fzf --prompt="Switch workspace: ")
+  if [[ -n $ws ]]; then
+    wezterm cli activate-tab --workspace "$ws"
+  fi
+}
 eval "$(zoxide init --cmd cd zsh)"
 
 
@@ -71,3 +83,5 @@ cermic 1 ~/.config/cermicbg
 # Enables reverse search with fzf on mac
 source /opt/homebrew/Cellar/fzf/0.53.0/shell/key-bindings.zsh 2>/dev/null
 source /opt/homebrew/Cellar/fzf/0.53.0/shell/completion.zsh 2>/dev/null
+
+[ -n "$WEZTERM_PANE" ] && export NVIM_LISTEN_ADDRESS="/tmp/nvim$WEZTERM_PANE"

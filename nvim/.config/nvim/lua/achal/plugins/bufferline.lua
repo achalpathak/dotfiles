@@ -63,5 +63,15 @@ return {
 				},
 			},
 		},
+		highlights = {
+			buffer_selected = { fg = "#ffffff", bg = "#282C34", bold = true },
+			buffer_selected_diagnostic = { fg = "#ffffff", bg = "#282C34", bold = true },
+			error_selected = { fg = "#ff5555", bg = "#282C34", bold = true },
+			warning_selected = { fg = "#f1fa8c", bg = "#282C34", bold = true },
+			info_selected = { fg = "#8be9fd", bg = "#282C34", bold = true },
+			error_selected_diagnostic = { fg = "#ff5555", bg = "#282C34", bold = true },
+			warning_selected_diagnostic = { fg = "#f1fa8c", bg = "#282C34", bold = true },
+			info_selected_diagnostic = { fg = "#8be9fd", bg = "#282C34", bold = true },
+		},
 	},
 }

@@ -2,7 +2,6 @@ return {
 	"yetone/avante.nvim",
 	event = "VeryLazy",
 	lazy = false,
-	version = false, -- Set this to "*" to always pull the latest release version, or set it to false to update to the latest code changes.
 	opts = {
 		provider = "copilot",
 		copilot = {
@@ -46,5 +45,8 @@ return {
 			},
 			ft = { "markdown", "Avante" },
 		},
+	},
+	behaviour = {
+		enable_fastapply = false, -- Enable Fast Apply feature
 	},
 }

@@ -1,7 +1,7 @@
 return {
-	{
-		"christoomey/vim-tmux-navigator",
-	},
+	-- {
+	-- 	"christoomey/vim-tmux-navigator",
+	-- },
 
 	-- animations
 	{
@@ -122,6 +122,91 @@ return {
 					},
 				})
 			end,
+		},
+	},
+	-- {
+	-- 	"mrjones2014/smart-splits.nvim",
+	--
+	-- 	lazy = false,
+	-- 	priority = 1000,
+	-- 	config = function()
+	-- 		require("smart-splits").setup({
+	-- 			-- These are the defaults, customize if needed
+	-- 			-- See plugin docs for more options
+	-- 			-- ignored_buftypes = { "nofile", "quickfix", "prompt" },
+	-- 			-- ignored_filetypes = { "NvimTree" },
+	-- 			-- default_amount = 3,
+	-- 			-- at_edge = "wrap", -- wrap to the other side of split
+	-- 			-- move_cursor_same_row = false,
+	-- 			multiplexer_integration = "wezterm", -- auto-detected, but can force 'wezterm'
+	-- 		})
+	--
+	-- 		vim.keymap.set("n", "<C-h>", "<cmd>lua require('smart-splits').move_cursor_left()<CR>")
+	-- 		vim.keymap.set("n", "<C-j>", "<cmd>lua require('smart-splits').move_cursor_down()<CR>")
+	-- 		vim.keymap.set("n", "<C-k>", "<cmd>lua require('smart-splits').move_cursor_up()<CR>")
+	-- 		vim.keymap.set("n", "<C-l>", "<cmd>lua require('smart-splits').move_cursor_right()<CR>")
+	-- 		vim.keymap.set("n", "<C-\\>", "<cmd>lua require('smart-splits').move_cursor_previous()<CR>")
+	--
+	-- 		vim.keymap.set("n", "<C-h>", function()
+	-- 			vim.cmd("SmartCursorMoveLeft")
+	-- 		end)
+	-- 		-- vim.keymap.set("n", "<C-j>", function()
+	-- 		-- 	print("CTRL+J pressed - executing SmartCursorMoveDown")
+	-- 		-- 	vim.notify("CTRL+J pressed - executing SmartCursorMoveDown")
+	-- 		-- 	vim.cmd("SmartCursorMoveDown")
+	-- 		-- end)
+	-- 		vim.keymap.set("n", "<C-k>", function()
+	-- 			vim.cmd("SmartCursorMoveUp")
+	-- 		end)
+	-- 		vim.keymap.set("n", "<C-l>", function()
+	-- 			vim.cmd("SmartCursorMoveRight")
+	-- 		end)
+	-- 		vim.keymap.set("n", "<C-\\>", function()
+	-- 			vim.cmd("SmartCursorMovePrevious")
+	-- 		end)
+	--
+	-- 		vim.keymap.set("n", "<A-h>", function()
+	-- 			vim.cmd("SmartResizeLeft")
+	-- 		end)
+	-- 		vim.keymap.set("n", "<A-j>", function()
+	-- 			vim.cmd("SmartResizeDown")
+	-- 		end)
+	-- 		vim.keymap.set("n", "<A-k>", function()
+	-- 			vim.cmd("SmartResizeUp")
+	-- 		end)
+	-- 		vim.keymap.set("n", "<A-l>", function()
+	-- 			vim.cmd("SmartResizeRight")
+	-- 		end)
+	-- 	end,
+	-- },
+
+	{
+		"letieu/wezterm-move.nvim",
+		keys = {
+			{
+				"<C-h>",
+				function()
+					require("wezterm-move").move("h")
+				end,
+			},
+			{
+				"<C-j>",
+				function()
+					require("wezterm-move").move("j")
+				end,
+			},
+			{
+				"<C-k>",
+				function()
+					require("wezterm-move").move("k")
+				end,
+			},
+			{
+				"<C-l>",
+				function()
+					require("wezterm-move").move("l")
+				end,
+			},
 		},
 	},
 }
